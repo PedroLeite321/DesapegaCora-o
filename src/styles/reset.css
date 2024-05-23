@@ -1,0 +1,13 @@
+:root {
+    --mainTitleFontSize: 1.2em;
+    --primaryColor: #fff;
+    --secondaryColor: #e72b68;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family:"Montserrat", Georgia, 'Times New Roman', Times, serif;
+}
