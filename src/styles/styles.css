@@ -3,6 +3,7 @@
     background-color: var(--primaryColor);
     width:100;
     height:100%;
+    border-bottom: 2px solid black;
 
 }
 
@@ -12,6 +13,31 @@
 
 }
 
-.img {
-    width:70px;
+#my__furniture__img {
+    width:100%;
+    height:500px;
+    max-width:100% !important;
+    image-rendering: optimizeQuality;
+}
+
+.my__main   {
+    display:flex;
+    align-items: center;
+    justify-content:  center;
+    height:100vh;
+    width:100%;
+    max-width: 50%;
+    max-height:fit-content;
+
+}
+
+
+.my_button {
+    border-radius: 30px;
+    width:240px;
+    font-size: var(--button_font_size);
+    font-weight:500;
+    
+    
+
 }

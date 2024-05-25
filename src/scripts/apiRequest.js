@@ -1,42 +1,69 @@
-const apiRequestMain = () =>    {
+const apiRequestMain = () => {
+    let myQuery = "furniture";
+    let myCurrentItem = 0;// Initialize lastNumber outside the function
+    let i = 0;
+
     const states = {
-        pageInteractiveElements: {
-            userSeacher: document.querySelector("."),
-            nextImage_Right: document.querySelector("."),
-            nextImage_Left: document.querySelector("."),
-            submitButton: document.querySelector("")
-
+        pageUserInteract: {
+            userRButtons: document.querySelector(".right_button"),
+            userLButtons: document.querySelector(".left_button"),
         },
-
         pageViewElements: {
-            myModal: document.querySelector("."),
-            
-        }
+            myImage: document.getElementById("my__furniture__img"),
+        },
     };
-    state
-    const myApiConnector = () => {
 
-        const myApiKey = "xAqNDHxiSkL41H9pIIcBwiTmbEFAf5iAROwre8KzXPBR4Cknj0lpYTr2";
-        const myQuery = "";
-        const myApiUrl = `https://api.pexels.com/v1/search?query=${myQuery}&per_page=10`;
+    states.pageUserInteract.userLButtons.addEventListener("click", () => {
+        checkPrevNumber();
+    });
 
-        
-    }
+    states.pageUserInteract.userRButtons.addEventListener("click", () => {
+        console.log("Teste");
+         checkNextNumber();
+    })
 
-    const myFetch = (key, url, query) => {
+  
+
+    const myFetch = (key, url) => {
         fetch(url, {
             headers: {
                 Authorization: key,
             }
         })
-        .then(response => response.json) 
+        .then(response => response.json())
         .then(data => {
-            data.photos.forEach(photo => {
-                //I should probably base this on monitor screen.
-                const imgUrl = photo.src.medium;
-                alert(imgUrl);
-            });
+            
+            const firstImg = data.photos[i].src.medium;
+            states.pageViewElements.myImage.src = firstImg;
         })
-        .catch(error => console.error("Generic error: fetching images", error));
+        .catch(error => {
+            if(i < 0) {
+                i = 0;
+                alert("Não há nada para ser mostrado.");
+            }
+            i = 0;
+            console.error("Generic error: fetching images", error);
+        });
+    };
+    
+    const myApiConnector = () => {
+        const myApiKey = "xAqNDHxiSkL41H9pIIcBwiTmbEFAf5iAROwre8KzXPBR4Cknj0lpYTr2";
+        const myApiUrl = `https://api.pexels.com/v1/search?query=${myQuery}&per_page=10`;
+        myFetch(myApiKey, myApiUrl);
+    };
+
+    const checkNextNumber = () => {
+        i++;
+        myApiConnector();
+        
     }
-}
+    const checkPrevNumber = () => {
+        i--;
+        myApiConnector();
+    }
+
+    myApiConnector();
+    console.log("Test");
+};
+
+apiRequestMain();
