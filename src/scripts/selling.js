@@ -14,16 +14,6 @@ const apiRequestMain = () => {
         },
     };
 
-    if(states.pageUserInteract.userLButtons && states.pageUserInteract.userRButtons)    {
-        states.pageUserInteract.userLButtons.addEventListener("click", () => {
-            checkPrevNumber();
-        });
-    
-        states.pageUserInteract.userRButtons.addEventListener("click", () => {
-            console.log("Teste");
-             checkNextNumber();
-        })     
-    }
      
 
   
@@ -36,24 +26,24 @@ const apiRequestMain = () => {
         })
         .then(response => response.json())
         .then(data => {
-            let j
-            if (data.photos[j]) {
+            for(let j = 0; j <= 9; j++) {
                 let myImages = document.createElement("img");
+                let buttonContainer = document.createElement("div");
+                let firstButton = document.createElement("button");
+                let secondButton = document.createElement("button");
+
+                buttonContainer.setAttribute("class", "button__container");
+                firstButton.setAttribute("class", "first__button");
+                secondButton.setAttribute("class", "second__button");
+                myImages.setAttribute("class", "my__image__list");
+
                 myImages.src = data.photos[j].src.medium;
                 states.pageViewElements.mySellingItems.appendChild(myImages);
-            } else {
-                console.error(`No photo found at index ${j}`);
             }
 
-            const firstImg = data.photos[i].src.medium;
-            states.pageViewElements.myImage.src = firstImg;
+
         })
         .catch(error => {
-            if(i < 0) {
-                i = 0;
-                alert("Não há nada para ser mostrado.");
-            }
-            i = 0;
             console.error("Generic error: fetching images", error);
         });
     };

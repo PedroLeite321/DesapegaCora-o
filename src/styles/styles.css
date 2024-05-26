@@ -1,0 +1,118 @@
+
+
+.my_navbar {
+    
+    background-color: var(--primaryColor);
+    width:100%;
+    height:100%;
+    border-bottom: 2px solid black;
+
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.nav__title { 
+    font-size: var(--navTitle);
+    cursor:pointer;
+}
+
+
+
+.img     {
+    margin-bottom:10px;
+    width:80px;
+    cursor:pointer;
+}
+
+.my_icon {
+    max-height:100%;
+    max-width:100%;
+
+}
+
+.picture__container {
+    width:100%;
+    height:100%;
+    min-width:200px;
+    max-height:600px;
+    border-radius:30px;
+    
+
+}
+
+#my__furniture__img {
+    width:100%;
+    height:500px;
+    border-radius:10px;
+    border:solid #ffffff 18px;
+    max-width:720px !important;
+    image-rendering: optimizeQuality;
+}
+
+.my__main   {
+    display:flex;
+    align-items: center;
+    justify-content:  center;
+    height:100vh;
+    width:100%;
+    background: rgb(218,19,136);
+    background: linear-gradient(90deg, rgb(225, 33, 145) 0%, rgba(233,7,99,1) 50%, rgba(254,155,172,1) 100%);
+
+}
+
+
+.my_button {
+    border-radius: 30px;
+    width:70px;
+    font-size: var(--button_font_size);
+    font-weight:500;
+    border: 2px solid black;
+
+}
+
+.my_button:hover    {
+    cursor:pointer;
+    transition:ease-in-out 0.2s;
+    width:110px;
+    background-color:rgb(238, 10, 146);
+    color: #fff;
+    animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(0deg);
+        
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    to {
+    
+        transform: rotate(-10deg);
+    }
+    
+}
+
+.choice__button {
+    font-size:1.4em;
+
+}
+
+.like_button {
+    width:30px;
+}
+
+.buy_button {
+
+    width:90px;
+}
+
+.buy_icon   {
+    width:30px;
+
+}

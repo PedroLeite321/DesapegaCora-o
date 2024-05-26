@@ -1,0 +1,16 @@
+:root {
+    --mainTitleFontSize: 1.2em;
+    --navTitle: 2.5em;
+    --primaryColor: #fff;
+    --secondaryColor: #bb3e66;
+    --heart_color: #a5f2f3;
+    --button_font_size: 0.8em;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family:"Montserrat", Georgia, 'Times New Roman', Times, serif;
+}

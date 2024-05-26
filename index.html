@@ -9,12 +9,70 @@
 
     <!--Css-->
     <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/styles.css">
     
     <!--Javascript-->
     <script defer src="./src/scripts/apiRequest.js"></script>
+    <script defer src="./src/scripts/selling.js"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Desapega Coração</title>
 </head>
 <body>
-    
+    <nav class=" ps-4 pe-4 navbar navbar-expand-lg navbar-light fw-bold my_navbar border">
+        <a class="navbar-brand fs-1" href="#"><a href="index.html"><span class="nav__title">Desapega</span> <picture class="my_icon container"><img class="img container" src="./assets/favicons/icons/icon_heart_small.png" alt=""></picture></a> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" collapse navbar-collapse" id="navbarNav">
+          <ul class="m-3 navbar-nav ">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/vendas.html">Carrinho</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Compra realizada com sucesso. O item foi adicionado à lista.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Entendi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="my__main ">
+        <picture class="container  text-center picture__container">
+          <div class=" p-1">
+            <div class="p-3 ">
+              <img id="my__furniture__img" src="" alt="">
+              <div class="column button__area df m-3">
+                <button class="left_button p-2 mx-4 my_button">
+                  <span class="choice__button"><</span>
+                </button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="buy_button p-2 mx-4 my_button">
+                  <span><img class="buy_icon" src="./assets/favicons/icons/buy_icon.png" alt=""></span>
+                </button>
+                <button class="right_button p-2 mx-4 my_button">
+                  <span class="choice__button">></span>
+                </button> 
+             </div>
+          </div>
+        </picture>
+      </main>
 </body>
 </html>
